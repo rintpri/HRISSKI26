@@ -40,7 +40,7 @@ interface SidebarProps {
 }
 
 export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => {
-  const { currentRole, pendingLeaveApprovals, contractAlerts } = useHRIS();
+  const { currentEmployee, currentRole, pendingLeaveApprovals, contractAlerts } = useHRIS();
 
   const isHrd = currentRole === 'hrd';
   const isManager = currentRole === 'manager';
@@ -210,9 +210,15 @@ export const Sidebar: React.FC<SidebarProps> = ({ currentTab, onSelectTab }) => 
           <span>Status Akses:</span>
           <span className="font-bold text-indigo-400 uppercase">{currentRole}</span>
         </div>
-        <p className="mt-1 text-[10px] text-slate-500">
-          Gunakan tombol peran di navbar atas untuk simulasi Atasan / Karyawan.
-        </p>
+        {currentEmployee.role === 'hrd' ? (
+          <p className="mt-1 text-[10px] text-slate-500">
+            Gunakan tombol peran di navbar atas untuk simulasi Atasan / Karyawan.
+          </p>
+        ) : (
+          <p className="mt-1 text-[10px] text-slate-500">
+            Sistem Terhubung • Hak Akses Resmi
+          </p>
+        )}
       </div>
     </aside>
   );
