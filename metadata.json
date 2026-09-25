@@ -1,0 +1,6 @@
+{
+  "name": "HRISSKI26 - Sistem Manajemen Karyawan & Payroll",
+  "description": "Sistem manajemen HRIS lengkap: data karyawan, absensi kunci lokasi (geofencing), approval cuti berjenjang, payroll kalkulasi PPh 21 & BPJS, penilaian kinerja, rekrutmen, dan portal mandiri.",
+  "requestFramePermissions": ["geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
